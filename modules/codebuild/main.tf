@@ -29,6 +29,6 @@ resource "aws_codebuild_project" "terraform_codebuild_project" {
   }
   source {
     type      = var.build_project_source
-    buildspec = "./templates/buildspec_${var.build_projects[count.index]}.yml"
+    buildspec = "./codebuild/buildspec_${var.build_projects[count.index]}.yml"
   }
 }

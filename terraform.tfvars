@@ -1,4 +1,5 @@
 project_name       = "tf-validate-project"
+aws_profile        = "ttecfed-dev-056220718120"
 environment        = "dev"
 source_repo_name   = "terraform-pipeline-test"
 source_repo_branch = "main"
