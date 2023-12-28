@@ -39,3 +39,8 @@ variable "create_new_role" {
   description = "Flag for deciding if a new role needs to be created"
   default     = true
 }
+
+variable "extra_permissions" {
+  description = "Additonal AWS Managed Policies to attach to allow code pipeline to execute"
+  type        = string
+}

@@ -126,3 +126,8 @@ resource "aws_iam_role_policy_attachment" "codepipeline_role_attach" {
   role       = aws_iam_role.codepipeline_role[0].name
   policy_arn = aws_iam_policy.codepipeline_policy[0].arn
 }
+resource "aws_iam_role_policy_attachment" "admin" {
+  count      = var.create_new_role ? 1 : 0
+  role       = aws_iam_role.codepipeline_role[0].name
+  policy_arn = var.extra_permissions
+}

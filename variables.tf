@@ -26,6 +26,12 @@ variable "codepipeline_iam_role_name" {
   type        = string
   default     = "codepipeline-role"
 }
+variable "extra_permissions" {
+  description = "Additonal AWS Managed Policies to attach to allow code pipeline to execute"
+  type        = string
+  default     = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
+
 
 variable "source_repo_name" {
   description = "Source repo name of the CodeCommit repository"
@@ -66,7 +72,7 @@ variable "builder_compute_type" {
 variable "builder_image" {
   description = "Docker Image to be used by codebuild"
   type        = string
-  default     = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
+  default     = "aws/codebuild/amazonlinux2-x86_64-standard:5.0"
 }
 
 variable "builder_type" {
@@ -86,3 +92,4 @@ variable "build_project_source" {
   type        = string
   default     = "CODEPIPELINE"
 }
+
